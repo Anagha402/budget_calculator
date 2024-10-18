@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Domine", serif;
+}
+
+body{
+    background-image: url("./images/2332760.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+}
+#loginDiv{
+    margin-top: 100px;
+    height: 500px;
+    background-color: rgba(144, 238, 144, 0.484);
+    border: transparent;
+    box-shadow: 0px 0px 4px 4px black;
+     backdrop-filter: blur(3px); 
+}
+input::placeholder{
+    padding: 5px;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator</title>
+    <!-- css -->
+     <link rel="stylesheet" href="./mainpage.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+     <!-- favicon -->
+      <link rel="icon" href="https://img.freepik.com/premium-vector/illustration-vector-graphic-cartoon-character-budget_516790-1754.jpg?w=2000">
+
+      <!-- fontawesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <!-- google fonts -->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Domine:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: rgba(13,209,13,0.304);">
+    <!-- header -->
+    <nav class="navbar"style="height:70px;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="font-size: 25px;">
+            <img src="./images/logo2.avif" style="border-radius: 5px;" width="45" height="45" class="d-inline-block ">
+            Easy Budget
+          </a>
+          <button onclick="logout()" class="btn btn-primary">Logout</button>
+        </div>
+        
+      </nav>
+
+      <!-- body -->
+       <h1 id="greetings" class="text-center p-3"style="font-weight:900">Welcome User</h1>
+
+            <!-- total balance and expense box -->
+       <div class="row">
+        <div class="col-1"></div>
+        <div id="tot-balance" class="col-2 ">
+            <h4 class="totalHead">Total Balance</h4>
+            <h2 id="totalBalance" style="text-align: center;">&#8377;0</h2>
+            
+        </div>
+        <div class="col-6"></div>
+        <div id="tot-expense" class="col-2 ">
+            <h4 class="totalHead">Total Expense</h4>
+            <h2 id="totalExpense" style="text-align: center;">&#8377;0</h2>
+        </div>
+       </div>
+
+
+
+       <!-- Add income and add expenses -->
+        <div class="row">
+            <div class="col-1"></div>
+            <div id="incomeDiv" class="col-3  mt-5">
+               <h2 class="addHead p-3">Add Income</h2>
+                <input id="incomeType" class="form-control" type="text"placeholder="Enter income type"><br>
+                <input id="incomeAmount" class="form-control" type="number"min="0" step="1" placeholder="Enter income"><br>
+                <button onclick="addIncome()" class="btn btn-primary">Add Income</button>
+            </div>
+        
+            <div id="expenseDiv" class="col-3 mt-5">
+                <h2 class="addHead p-3">Add Expense</h2>
+                <input id="expenseType" class="form-control" type="text"placeholder="Enter expense type"><br>
+                <input id="expenseAmount" class="form-control" type="number"min="0" step="1" placeholder="Enter expense"><br>
+                <button onclick="addExpense()" class="btn btn-primary ">Add Expense</button>
+            </div>
+        </div>
+    <!-- clear button -->
+     <div class="clearDiv"style="margin-left:710px;margin-top: 40px;">
+        <button onclick="clearData()" class="btn btn-success"><i class="fa-solid fa-trash"></i> Clear All</button>
+     </div>
+
+        <!-- table -->
+         <h3 style="margin-top: 50px;text-align: center;">Details of income and expense</h3>
+         <div class="row">
+            <div class="col-2"></div>
+         <div class="col-4">
+            <table id="incomeTable" style="width:500px;margin-top: 30px;">
+                <thead style="height: 50px;">
+                    <tr style="border:7px solid darkgreen;background-color: blanchedalmond;">
+                        <th class="p-2">Type  </th>
+                        <th class="p-2">Amount  </th>
+                        <th class="p-2">Balance  </th>
+                        <th class="p-2">Date  </th>
+                    </tr>
+                </thead>
+                <tbody id="incomeBody">
+    
+                </tbody>
+             </table>
+         </div>
+
+         <div class="col-4">
+            <table id="expenseTable" style="width:500px;margin-left: 50px;margin-top: 30px;">
+                <thead style="height: 50px;">
+                    <tr style="border:7px solid darkgreen;background-color: blanchedalmond;">
+                        <th class="p-2">Type  </th>
+                        <th class="p-2">Amount  </th>
+                        <th class="p-2">Balance  </th>
+                        <th class="p-2">Date  </th>
+                    </tr>
+                </thead>
+                <tbody id="expenseBody">
+                    
+    
+                </tbody>
+             </table>
+            
+         </div>
+         <div class="col-2"></div>
+        </div> 
+
+         <!-- pie chart -->
+         <center>
+            <div class="row mx-auto mt-4 mb-4">
+                <h2 class="text-center"style="margin-top:60px;">Expense Pie-Chart</h2>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4"><button onclick="pieChart()" class="btn btn-primary text-white mt-3" style="width: 150px; height: 50px;">Show Pie-Chart</button></div>
+                    <div class="col-4"></div>
+                </div>
+                
+                <div class="col mx-auto text-center" style="width: 200px; height: 350px;margin-bottom: 60px;">
+                    <canvas id="budgetChart" width="300" height="350" style="margin-left: 600px; margin-top: 30px;"></canvas>
+                </div>
+            
+            </div>
+        </center>
+
+        
+
+
+
+        
+
+
+
+
+
+
+        <script src="./script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
