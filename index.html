@@ -21,32 +21,40 @@
        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Domine:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body >
+  <header style="background-color: rgb(93, 210, 249);height: 90px;">
     
-<h1 style="text-align: center; margin-top: 20px;font-weight: 900;font-size: 50px;text-shadow: 2px 2px 2px white;">Easy Budget</h1>
+<h1 style="text-align: center;padding: 10px; font-weight: 900;color:darkblue;font-size: 50px;text-shadow: 4px 4px 4px white;">Easy Budget</h1>
+</header>
      <!-- login body -->
-      <div  class="row">
-        <div class="col-4"></div>
+      <div  class="row" >
+        <div class="col-4">
+          <img src="./images/graphic-concept-with-wood-blocks-flat-lay_23-2148950361.jpg"height="700px" width="1600px">
+        </div>
+
+
+        <div id="loginDiv" class="col-4">
+          <h1 class="text-center p-3"style="color:darkblue;font-weight:700;text-shadow:2px 2px 2px grey">Login</h1>
+
+
+          <label for="login_email"style="font-weight:700;">Email :</label><br>
+          <input class="form-control" id="login_email" type="email" placeholder="Enter email">
+          <br>
+
+          <label for="login_pswd"style="font-weight:700;">Password :</label><br>
+          <input class="form-control" id="login_pswd" type="password" placeholder="Enter password">
+
+          <br><br>
+          <button onclick="login()" class="btn btn-primary" style="width: 150px;margin-left: 160px;font-weight: 700;">Login</button>
+
+          <br>
+          <p style="text-align: center;margin-top: 20px;font-weight: 700;">Not yet registered? <a href="./register.html" style="text-decoration: none;font-weight: 700;">Register</a></p>
+
+      </div>
         <div class="col-3">
+          
             
         </div>
-        <div id="loginDiv" class="col-4">
-            <h1 class="text-center p-3">Login</h1>
-
-
-            <label for="login_email">Email :</label><br>
-            <input class="form-control" id="login_email" type="email" placeholder="Enter email">
-            <br>
-
-            <label for="login_pswd">Password :</label><br>
-            <input class="form-control" id="login_pswd" type="password" placeholder="Enter password">
-
-            <br><br>
-            <button onclick="login()" class="btn btn-warning" style="width: 150px;margin-left: 160px;">Login</button>
-
-            <br>
-            <p style="text-align: center;margin-top: 20px;">Not yet registered? <a href="./register.html" style="text-decoration: none;">Register</a></p>
-
-        </div>
+        
         <div class="col-1">
 
         </div>

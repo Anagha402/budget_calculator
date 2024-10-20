@@ -24,28 +24,28 @@
     <!-- header -->
     <nav class="navbar"style="height:70px;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#" style="font-size: 25px;">
+          <a class="navbar-brand" href="#" style="font-size: 25px;font-weight: 700;color: white;text-shadow: 2px 2px 2px grey;">
             <img src="./images/logo2.avif" style="border-radius: 5px;" width="45" height="45" class="d-inline-block ">
             Easy Budget
           </a>
-          <button onclick="logout()" class="btn btn-primary">Logout</button>
+          <button onclick="logout()" class="btn btn-danger">Logout</button>
         </div>
         
       </nav>
 
       <!-- body -->
-       <h1 id="greetings" class="text-center p-3"style="font-weight:900">Welcome User</h1>
+       <h1 id="greetings" class="text-center p-3"style="font-weight:900;color:darkblue">Welcome User</h1>
 
             <!-- total balance and expense box -->
        <div class="row">
         <div class="col-1"></div>
-        <div id="tot-balance" class="col-2 ">
+        <div id="tot-balance" class="col-2 "style="color:darkblue">
             <h4 class="totalHead">Total Balance</h4>
             <h2 id="totalBalance" style="text-align: center;">&#8377;0</h2>
             
         </div>
         <div class="col-6"></div>
-        <div id="tot-expense" class="col-2 ">
+        <div id="tot-expense" class="col-2 "style="color:darkblue">
             <h4 class="totalHead">Total Expense</h4>
             <h2 id="totalExpense" style="text-align: center;">&#8377;0</h2>
         </div>
@@ -57,17 +57,17 @@
         <div class="row">
             <div class="col-1"></div>
             <div id="incomeDiv" class="col-3  mt-5">
-               <h2 class="addHead p-3">Add Income</h2>
+               <h2 class="addHead p-3"style="color:darkblue;font-weight:600">Add Income</h2>
                 <input id="incomeType" class="form-control" type="text"placeholder="Enter income type"><br>
                 <input id="incomeAmount" class="form-control" type="number"min="0" step="1" placeholder="Enter income"><br>
-                <button onclick="addIncome()" class="btn btn-primary">Add Income</button>
+                <button onclick="addIncome()" class="btn"style="background-color:maroon;color:white;width:570px;">Add Income</button>
             </div>
         
             <div id="expenseDiv" class="col-3 mt-5">
-                <h2 class="addHead p-3">Add Expense</h2>
+                <h2 class="addHead p-3"style="color:darkblue;font-weight:600;">Add Expense</h2>
                 <input id="expenseType" class="form-control" type="text"placeholder="Enter expense type"><br>
                 <input id="expenseAmount" class="form-control" type="number"min="0" step="1" placeholder="Enter expense"><br>
-                <button onclick="addExpense()" class="btn btn-primary ">Add Expense</button>
+                <button onclick="addExpense()" class="btn "style="background-color:darkblue;color:white;width:570px;">Add Expense</button>
             </div>
         </div>
     <!-- clear button -->
@@ -76,7 +76,7 @@
      </div>
 
         <!-- table -->
-         <h3 style="margin-top: 50px;text-align: center;">Details of income and expense</h3>
+         <h3 style="margin-top: 50px;text-align: center;color:darkblue">Details of income and expense</h3>
          <div class="row">
             <div class="col-2"></div>
          <div class="col-4">
@@ -118,7 +118,7 @@
          <!-- pie chart -->
          <center>
             <div class="row mx-auto mt-4 mb-4">
-                <h2 class="text-center"style="margin-top:60px;">Expense Pie-Chart</h2>
+                <h2 class="text-center"style="margin-top:60px;color:darkblue">Expense Pie-Chart</h2>
                 <div class="row">
                     <div class="col-4"></div>
                     <div class="col-4"><button onclick="pieChart()" class="btn btn-primary text-white mt-3" style="width: 150px; height: 50px;">Show Pie-Chart</button></div>
