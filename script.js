@@ -104,19 +104,38 @@ function addExpense() {
     }
 }
 
-function addRow(tableId, bodyId, type, amount) {
+
+
+function addRow(tablId, bodyId, type, amount) {
+    //tableId is required to display the type here
+    //If type, amount, or totalBalance parameters are not passed, JavaScript will assign undefined to those variables.
+           //This will cause the table cells to display "undefined" in place of actual values
+           //The date will still work, as it defaults to the current date and time.So no need of defining parameter for date
+
+
+    // Get the table body using the provided bodyId
     let tableBody = document.getElementById(bodyId);
+    tableBody.style.backgroundColor="aliceblue"
+    tableBody.style.border="7px solid aliceblue"
+    
+
+    // Insert a new row at the end of the table body
     let row = tableBody.insertRow();
+
+    // Insert new cells into the row
     let typeCell = row.insertCell(0);
+    
     let amountCell = row.insertCell(1);
     let balanceCell = row.insertCell(2);
     let dateCell = row.insertCell(3);
-
-    typeCell.textContent = type;
-    amountCell.textContent = `₹ ${amount}`;
-    balanceCell.textContent = `₹ ${totalBalance}`;
-    dateCell.textContent = new Date().toLocaleString();
+    
+    // Set the content for each cell
+    typeCell.textContent = type; //type of the transaction
+    amountCell.textContent = `₹ ${amount}`;// amount of the transaction
+    balanceCell.textContent = `₹ ${totalBalance}`;// The current total balance after the transaction
+    dateCell.textContent = new Date().toLocaleString();//Current date and time
 }
+
 
 function clearData() {
     if (confirm("Are you sure you want to clear all data?")) {
@@ -128,6 +147,8 @@ function clearData() {
         expenseAmount.value=''
         balanceDisplay.innerHTML='&#8377;0'
         expenseDisplay.innerHTML='&#8377;0'
+        pie=document.getElementById("pie")
+        pie.innerHTML=''
         
         document.getElementById('incomeBody').innerHTML = '';
         document.getElementById('expenseBody').innerHTML = '';
@@ -140,9 +161,9 @@ function pieChart() {
     const data = {
         labels: ['Expense', 'Remaining Balance'],
         datasets: [{
-            label: 'My First Dataset',
+            //label: 'My First Dataset',
             data: [totalExpense, totalBalance],
-            backgroundColor: ['#FF6384', 'darkblue'],
+            backgroundColor: ['magenta', 'darkblue'],
             hoverOffset: 4
         }]
     };
