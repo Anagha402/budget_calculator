@@ -23,7 +23,7 @@ function register(){
         //take in details of new as key value pairs taking Accountno as the unique key
         window.localStorage.setItem(userobject.Email,JSON.stringify(userobject))
         alert("Registration Successful")
-        window.location="./login.html"
+        window.location="./index.html"
        
     }
 }
